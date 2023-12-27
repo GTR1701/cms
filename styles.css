@@ -1,0 +1,465 @@
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #212121;
+}
+
+:root {
+  --accent-color: #6200ee;
+}
+
+header {
+	width: 100%;
+	height: 4rem;
+	background-color: #5a2996;
+	color: white;
+}
+
+header a {
+	display: inline-block;
+	width: fit-content;
+	margin: 0 3rem;
+	height: 3.25rem;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	font-size: 2em;
+	vertical-align: middle;
+	padding-top: 0.75rem;
+}
+
+.center-div {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: calc(100vh - 8rem);
+	background-color: #212121;
+}
+
+.center-div-cms {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: calc(100vh - 4rem);
+	background-color: #212121;
+}
+
+.center-div-home, .postPage{
+	width: 100%;
+	min-height: calc(100vh - 8rem);
+}
+
+.about {
+	width: 50%;
+	height: 100%;
+	color: white;
+	margin: auto;
+	text-align: justify;
+	padding: 1rem;
+}
+
+.about h1 {
+	margin-top: 30vh;
+	text-align: center;
+}
+
+aside {
+	width: 20%;
+	height: 100%;
+	background-color: #212121;
+}
+
+aside * {
+	display: block;
+	width: 100%;
+	height: fit-content;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	font-size: 2em;
+	padding-top: 1rem;
+}
+
+main {
+	width: 80%;
+	height: 100%;
+	text-align: center;
+	background-color: #212121;
+	color: white;
+	overflow: scroll;
+	border: 2px solid white;
+}
+
+main h1 {
+	margin-top: 30vh;
+}
+
+footer {
+	width: 100%;
+	height: 4rem;
+	background-color: rgb(0, 146, 255);
+	color: white;
+}
+
+.loginform {
+	width: 35vw;
+	height: 50vh;
+	margin: auto;
+	margin-top: 20vh;
+	margin-bottom: 20vh;
+	color: white;
+	border-radius: 10px;
+  background: linear-gradient(315deg, rgb(0, 146, 255) 7%, rgb(90, 41, 150) 83%);
+}
+
+.loginform > h1 {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.forminputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.forminputs input[type="submit"], .button, .loadMore {
+  width: fit-content;
+  height: 2.2rem;
+  background: #9552e8;
+  border: none;
+  border-radius: 4px;
+  margin: 0.5rem auto;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.25s;
+  cursor: pointer;
+}
+
+.forminputs input[type="submit"]:hover {
+  background-color: #5a2996;
+  transition-duration: 0.25s;
+}
+
+.forminputs p {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.forminputs a {
+  color: white;
+  text-decoration: none;
+}
+
+.forminputs a:hover {
+  text-decoration: underline;
+}
+
+p[id="userError"] {
+  color: red;
+  font-size: smaller;
+  margin: 0 auto;
+  padding: 5px 1rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 75%;
+}
+
+.input-container {
+  background: transparent;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  height: 56px;
+  transition: background-color 500ms;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.big-input-container {
+  background: transparent;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  height: 50vh;
+  transition: background-color 500ms;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.input-container:hover, .big-input-container:hover {
+  background-color: #ffffff05;
+}
+
+.input-container:focus-within, .big-input-container:hover {
+  background-color: #ffffff05;
+}
+
+label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  color: rgba(255, 255, 255, 1);
+  transform-origin: left top;
+  user-select: none;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
+}
+
+.big-input-container label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-22vh);
+  left: 16px;
+  color: rgba(255, 255, 255, 1);
+  transform-origin: left top;
+  user-select: none;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
+}
+
+input:not([type='submit']), textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  caret-color: white;
+  border: 2px solid transparent;
+  border-bottom-color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.87);
+  transition: border 500ms;
+  padding: 20px 16px 6px;
+  font-size: 1rem;
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(0, 146, 255);
+}
+
+input:focus + label, textarea:focus + label {
+  color: rgb(0, 146, 255);
+}
+
+input:focus + label,
+input.is-valid + label {
+  transform: translateY(-100%) scale(0.75);
+}
+
+textarea:focus + label,
+textarea.is-valid + label {
+  transform: translateY(-24vh) scale(0.75);
+}
+
+.postCard {
+  width: 80%;
+  height: fit-content;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 3px;
+}
+
+.left {
+  width: 20rem;
+}
+
+.right {
+  width:calc(100% - 21.5rem);
+  padding: 1rem;
+  padding-left: 1.5rem;
+  height: fit-content;
+}
+
+.right a {
+  text-decoration: none;
+  color: black;
+}
+
+.right a:hover {
+  text-decoration: underline;
+}
+
+.right h1 {
+  height: 10%;
+}
+
+.content {
+  height: 10rem;
+  text-align: justify;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.left img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+}
+
+.author {
+  padding-right: 1rem;
+  width: 100%;
+  height: fit-content;
+  text-align: right;
+}
+
+.postButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 1rem;
+  width: 100%;
+  height: 10%;
+  margin-top: 1rem;
+}
+
+.btnRed {
+  background-color: red;
+}
+
+.btnGreen {
+  background-color: green;
+}
+
+.btnBlue {
+  background-color: blue;
+}
+.btnRed:hover {
+  background-color: rgb(196, 1, 1);
+  transition-duration: 0.25s;
+}
+
+.btnGreen:hover {
+  background-color: rgb(0, 94, 0);
+  transition-duration: 0.25s;
+}
+
+.btnBlue:hover {
+  background-color: rgb(3, 3, 201);
+  transition-duration: 0.25s;
+}
+
+.btnDelete {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.btnPostDelete {
+  margin-top: 100%;
+  margin-bottom: 0;
+}
+
+.postCardButtons {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% 60% 20%;
+  height: 100%;
+}
+
+.postButtonContainer {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 4px;
+  margin: 0.5rem auto;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  transition-duration: 0.25s;
+}
+
+.btnControl {
+  padding: 1rem;
+  min-width: 10rem;
+  min-height: 4rem;
+  margin: auto;
+  font-size: large;
+}
+
+.postPage {
+  color: white;
+  width: 50%;
+  margin: auto;
+}
+
+.postPage h1 {
+  font-size: 300%;
+  margin-bottom: 0;
+}
+
+.postPageDetails {
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+
+.postPage img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.postPageContent {
+  text-align: justify;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.komentarze {
+  margin: 3rem 0;
+}
+
+.createPostForm {
+  width: 50%;
+  margin: auto;
+}
+
+.createPostForm input, .createPostForm textarea {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.forminputs input[type="file"]{
+  border: none;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.forminputs input[name="content"]{
+  height: 50vh;
+}
+
+.komentarz {
+  width: 80%;
+  height: fit-content;
+  padding: 1.5rem 3rem;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 0 0 0;
+}
+
+.loadMore {
+  margin: 2rem auto;
+
+}
+
+.loadMoreForm {
+  width: fit-content;
+  margin: 0 auto;
+}
