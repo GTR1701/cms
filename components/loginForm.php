@@ -10,6 +10,7 @@
             <input type="password" name="password" id="password" required />
             <label for="password">Hasło</label>
         </div>
+        <p id="userError"></p>
 
         <p>Nie masz konta? <a href="index.php?strona=login&operation=register">Zarejestruj się</a></p>
         <input type="submit" value="ZALOGUJ">

@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
         $coverImage = mysqli_fetch_array($coverImageResponse)['route'];
         $commentRow = mysqli_fetch_array($commentResponse);
         $content = strlen($row['contents']) >= 256 ? substr($row['contents'], 0, 256) . '...' : $row['contents'];
-        echo '<div class="postCard">';
+        echo '<div class="postCard" >';
         echo '<div class="left">';
         echo '<img src="' . $coverImage . '" alt="post image">';
         echo '</div>';

@@ -16,7 +16,7 @@
             $commentRow = mysqli_fetch_array($commentResponse);
             $content = strlen($row['contents']) >= 256 ? substr($row['contents'], 0, 256) . '...' : $row['contents'];
             $postid ++;
-            echo '<div class="postCard" name="'.$postid.'">';
+            echo '<div class="postCard" id="'.$postid.'">';
             echo '<div class="left">';
             echo '<img src="' . $coverImage['route'] . '" alt="' . $coverImage['alt'] . '">';
             echo '</div>';
